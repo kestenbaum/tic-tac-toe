@@ -6,6 +6,7 @@ function App() {
     <>
        <Container>
            <Player name={"Alex"} symbol={"x"}/>
+           <Player name={"Nick"} symbol={"0"}/>
        </Container>
     </>
   )
