@@ -1,7 +1,7 @@
 import {FC} from "react";
-import {Player} from "../../@types";
+import {PlayerInterface} from "../../@types";
 
-export const Player :FC<Player> = ({name, symbol}) => {
+const Player :FC<PlayerInterface> = ({name, symbol}) => {
     return (
         <div className="player">
             <div className="wrapper__name">
@@ -16,3 +16,4 @@ export const Player :FC<Player> = ({name, symbol}) => {
     );
 };
 
+export default Player;

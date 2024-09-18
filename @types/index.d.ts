@@ -1,10 +1,10 @@
 import {ReactNode} from "react";
 
-interface Player {
+interface PlayerInterface {
     name: string,
     symbol: string
 }
 
-interface Container {
+interface ContainerInterface {
     children: ReactNode
 }

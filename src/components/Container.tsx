@@ -1,7 +1,7 @@
 import {FC} from "react";
-import {Container} from "../../@types";
+import {ContainerInterface} from "../../@types";
 
-const Container:FC<Container> = ({children}) => {
+const Container:FC<ContainerInterface> = ({children}) => {
     return (
         <div className="container">
             {children}

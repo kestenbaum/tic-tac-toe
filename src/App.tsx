@@ -1,7 +1,7 @@
 import Player from "./components/Player.tsx";
 import Container from "./components/Container.tsx";
 
-export default function App() {
+function App() {
   return (
     <>
        <Container>
@@ -11,3 +11,4 @@ export default function App() {
   )
 }
 
+export default App;
