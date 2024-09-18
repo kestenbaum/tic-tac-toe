@@ -5,8 +5,10 @@ function App() {
   return (
     <>
        <Container>
-           <Player name={"Alex"} symbol={"x"}/>
-           <Player name={"Nick"} symbol={"0"}/>
+           <ul id={"players"}>
+               <Player name={"Alex"} symbol={"x"}/>
+               <Player name={"Nick"} symbol={"0"}/>
+           </ul>
        </Container>
     </>
   )
