@@ -1,19 +1,12 @@
-import {useState} from "react";
-
-interface EditingName {
-  edit: boolean
-}
+import Player from "./components/Player.tsx";
+import Container from "./components/Container.tsx";
 
 export default function App() {
-  const [isEdit, setIsEdit]:EditingName = useState(false)
-
   return (
     <>
-        <span>
-          Player
-          <span>Name Player 1</span>
-          <span>Symbol Player Symbol</span>
-        </span>
+       <Container>
+           <Player name={"Alex"} symbol={"x"}/>
+       </Container>
     </>
   )
 }
