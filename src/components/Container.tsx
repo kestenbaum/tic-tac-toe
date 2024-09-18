@@ -3,7 +3,7 @@ import {ContainerInterface} from "../../@types";
 
 const Container:FC<ContainerInterface> = ({children}) => {
     return (
-        <div className="container">
+        <div id="game-container">
             {children}
         </div>
     );
