@@ -4,7 +4,7 @@ const Player:FC<PlayerInterface> = ({name, symbol}) => {
     const [isEdit, setIsEdit] = useState<boolean>(false);
     const [namePlayer, setNamePlayer]  = useState<string>(name);
 
-    let playerName = !isEdit
+    const playerName = !isEdit
         ? <span className="player-name">Player: {namePlayer}</span>
         : <input className={"input"} onChange={handleChangeName} value={namePlayer}/>
 
