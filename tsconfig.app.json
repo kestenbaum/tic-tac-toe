@@ -22,6 +22,7 @@
   },
   "include": [
     "src",
-    "@types/index.d.ts"
+    "@types/index.d.ts",
+    "@types/player.d.ts"
   ]
 }
