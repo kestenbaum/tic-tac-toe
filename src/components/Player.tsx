@@ -13,7 +13,7 @@ const Player:FC<PlayerInterface> = ({name, symbol}) => {
     }
 
     function handleEditClick() {
-        setIsEdit(prev => !isEdit)
+        setIsEdit(prev => !prev)
     }
 
     return (
