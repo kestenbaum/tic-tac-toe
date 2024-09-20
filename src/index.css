@@ -2,7 +2,16 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 html {
   font-family: 'Roboto Slab', sans-serif;
@@ -58,11 +67,11 @@ h1 {
 }
 
 #players {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
   margin: 1rem 0;
-  display: flex;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
@@ -70,18 +79,10 @@ h1 {
 #players li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 50%;
   border: 2px solid transparent;
-}
-
-#players.highlight-player li.active {
-  border-color: #f6e35a;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-#players.highlight-player li.active .player-name,
-#players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  padding: 10px;
 }
 
 #players button {
@@ -100,24 +101,15 @@ h1 {
   color: #f8ca31;
 }
 
-.player {
-  border: 2px solid transparent;
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-weight: bold;
+.player-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.player-name {
-  display: inline-block;
-  width: 10rem;
+.player-option {
+  display: flex;
   font-size: 1rem;
   color: #e1dec7;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0.5rem;
-  border-radius: 4px;
-  text-overflow: ellipsis;
-  text-align: center;
 }
 
 .input {
@@ -130,18 +122,6 @@ h1 {
   background-color: #46432f;
   text-align: center;
   text-transform: uppercase;
-}
-
-.player-symbol {
-  margin-left: 1rem;
-  font-size: 1rem;
-  color: #e1dec7;
-}
-
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 #pre-game {
@@ -178,7 +158,7 @@ ol {
   padding: 0;
 }
 
-#game-board button {
+.game-button {
   width: 8rem;
   height: 8rem;
   border: none;
