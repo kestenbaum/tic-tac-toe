@@ -10,7 +10,7 @@ function App() {
     const [gameTurns, setGameTurns] = useState([])
     const [activePlayer, setActivePlayer] = useState<string>("X");
 
-    function handleSelectSquare( rowIndex, colIndex) {
+    function handleSelectSquare(rowIndex, colIndex) {
         setActivePlayer((prevState) => prevState === "X" ? "O" : "X");
         setGameTurns(prevTurn => {
             let currentPlayer = "X";
@@ -32,15 +32,17 @@ function App() {
     }
 
     return (
-        <Container>
-            <ul id={"players"}>
-                <Player name={INITIAL_PLAYERS.X} symbol={"X"} isActive={activePlayer === "X"}/>
-                <Player name={INITIAL_PLAYERS.O} symbol={"O"} isActive={activePlayer === "O"}/>
-            </ul>
-            <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer}/>
+        <>
+            <Container>
+                <ul id={"players"}>
+                    <Player name={INITIAL_PLAYERS.X} symbol={"X"} isActive={activePlayer === "X"}/>
+                    <Player name={INITIAL_PLAYERS.O} symbol={"O"} isActive={activePlayer === "O"}/>
+                </ul>
+                <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer}/>
+            </Container>
             <Log turns={gameTurns}/>
-        </Container>
-  )
+        </>
+    )
 }
 
 export default App;
