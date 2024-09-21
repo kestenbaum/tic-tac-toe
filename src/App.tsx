@@ -11,11 +11,11 @@ import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/co
 
 const App: FC = () => {
     const [gameTurns, setGameTurns] = useState<Turn[]>([]);
-    const activePlayer = deriveActivePlayer<string>(gameTurns);
+    const activePlayer = deriveActivePlayer(gameTurns);
     const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
-    let winner: string;
+    let winner;
 
-    function handleSelectSquare(rowIndex: string, colIndex: string) {
+    function handleSelectSquare(rowIndex: number, colIndex: number) {
         setGameTurns(prevTurns => {
             let currentPlayer: string = deriveActivePlayer(prevTurns);
             let updateTurns: Turn[];
@@ -24,6 +24,7 @@ const App: FC = () => {
                 {square: {col: colIndex, row: rowIndex}, player: currentPlayer},
                 ...prevTurns
             ];
+            console.log(updateTurns)
             return updateTurns;
         })
     }

@@ -12,8 +12,8 @@ interface PlayersSymbolInterface {
 
 interface Turn {
     square: {
-        row: string ,
-        col: string
+        row: number ,
+        col: number
     },
     player: string
 }
@@ -29,7 +29,7 @@ interface GameOverInterface {
 
 interface GameBoardInterface {
     board: null[][],
-    onSelectSquare: (row:string, col:string) => void;
+    onSelectSquare: (row:number, col:number) => void;
 }
 
 interface WinningCombinationsInterface {
