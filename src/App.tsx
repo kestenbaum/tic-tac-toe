@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {FC, useState} from "react";
 import Container from "./components/Container.tsx";
 import GameBoard from "./components/GameBoard.tsx";
 import Player from "./components/Player.tsx";
@@ -8,17 +8,19 @@ import GameOver from "./components/GameOver.tsx";
 import {deriveActivePlayer} from "./helpers/deriveActivePlayer.ts";
 import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/constant.ts";
 
-function App() {
+
+const App: FC = () => {
     const [gameTurns, setGameTurns] = useState<Turn[]>([]);
     const activePlayer = deriveActivePlayer<string>(gameTurns);
-    const gameBoard:null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
-    let winner;
-    function handleSelectSquare(rowIndex:number, colIndex:number) {
-        setGameTurns(prevTurns => {
-            let currentPlayer:string = deriveActivePlayer(prevTurns);
-            let updateTurns:Turn[] = [];
+    const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
+    let winner: string;
 
-            updateTurns =  [
+    function handleSelectSquare(rowIndex: string, colIndex: string) {
+        setGameTurns(prevTurns => {
+            let currentPlayer: string = deriveActivePlayer(prevTurns);
+            let updateTurns: Turn[];
+
+            updateTurns = [
                 {square: {col: colIndex, row: rowIndex}, player: currentPlayer},
                 ...prevTurns
             ];
@@ -26,7 +28,7 @@ function App() {
         })
     }
 
-    function handleResetBoard () {
+    function handleResetBoard() {
         setGameTurns([])
     }
 
@@ -37,9 +39,9 @@ function App() {
     }
 
     for (const combination of WINNING_COMBINATIONS) {
-        const firstSquareSymbol:null = gameBoard[combination[0].row][combination[0].column];
-        const secondSquareSymbol:null = gameBoard[combination[1].row][combination[1].column];
-        const thirdSquareSymbol:null = gameBoard[combination[2].row][combination[2].column];
+        const firstSquareSymbol: null = gameBoard[combination[0].row][combination[0].column];
+        const secondSquareSymbol: null = gameBoard[combination[1].row][combination[1].column];
+        const thirdSquareSymbol: null = gameBoard[combination[2].row][combination[2].column];
 
         if (firstSquareSymbol &&
             firstSquareSymbol === secondSquareSymbol &&
@@ -49,7 +51,7 @@ function App() {
         }
     }
 
-    const hasDraw = gameTurns.length === 9 && !winner;
+    const hasDraw: boolean = gameTurns.length === 9 && !winner;
 
     return (
         <>
@@ -72,7 +74,7 @@ function App() {
                     board={gameBoard}
                 />
             </Container>
-            <Log turns={gameTurns} />
+            <Log turns={gameTurns}/>
         </>
     )
 }
