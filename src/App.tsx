@@ -13,8 +13,8 @@ const App: FC = () => {
     const [gameTurns, setGameTurns] = useState<Turn[]>([]);
     const activePlayer = deriveActivePlayer(gameTurns);
     const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
-    const hasDraw = gameTurns.length === 9 && !winner;
     let winner;
+    const hasDraw = gameTurns.length === 9 && !winner;
 
     function handleResetBoard() {
         setGameTurns([])
