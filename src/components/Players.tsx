@@ -1,5 +1,5 @@
 import Player from "./Player.tsx";
-import {INITIAL_PLAYERS} from "../helpers/Constant.ts";
+import {INITIAL_PLAYERS} from "../helpers/constant.ts";
 
 const Players = () => {
     return (

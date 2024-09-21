@@ -3,10 +3,7 @@ const Log = ({turns}) => {
         <ol id={"log"}>
             {turns.map(turn =>
                 <li key={`${turn.square.col}${turn.square.row}`}>
-                    {turn.player}
-                    selected
-                    {turn.square.row}
-                    {turn.square.col}
+                    Player "{turn.player}" selected X: {turn.square.row} Y: {turn.square.col};
                 </li>)}
         </ol>
     );
