@@ -13,20 +13,8 @@ const App: FC = () => {
     const [gameTurns, setGameTurns] = useState<Turn[]>([]);
     const activePlayer = deriveActivePlayer(gameTurns);
     const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
+    const hasDraw = gameTurns.length === 9 && !winner;
     let winner=  "";
-
-    function handleSelectSquare(rowIndex: number, colIndex: number) {
-        setGameTurns(prevTurns => {
-            let currentPlayer = deriveActivePlayer(prevTurns);
-            let updateTurns: Turn[];
-
-            updateTurns = [
-                {square: {col: colIndex, row: rowIndex}, player: currentPlayer},
-                ...prevTurns
-            ];
-            return updateTurns;
-        })
-    }
 
     function handleResetBoard() {
         setGameTurns([])
@@ -35,7 +23,7 @@ const App: FC = () => {
     for (const turn of gameTurns) {
         const {square, player} = turn;
         const {row, col} = square;
-        gameBoard[row][col] = player;
+        gameBoard[row][col] = player
     }
 
     for (const combination of WINNING_COMBINATIONS) {
@@ -50,8 +38,18 @@ const App: FC = () => {
             winner = firstSquareSymbol;
         }
     }
+    function handleSelectSquare(rowIndex: number, colIndex: number) {
+        setGameTurns(prevTurns => {
+            let currentPlayer = deriveActivePlayer(prevTurns);
+            let updateTurns: Turn[];
 
-    const hasDraw = gameTurns.length === 9 && !winner;
+            updateTurns = [
+                {square: {col: colIndex, row: rowIndex}, player: currentPlayer},
+                ...prevTurns
+            ];
+            return updateTurns;
+        })
+    }
 
     return (
         <>

@@ -2,7 +2,7 @@
 interface PlayerInterface {
     name: string,
     symbol: string
-    isActive?: boolean
+    isActive: boolean
 }
 
 interface PlayersSymbolInterface {
@@ -11,7 +11,7 @@ interface PlayersSymbolInterface {
 }
 
 interface Turn {
-    player: string;
+    player: undefined | string | null;
     square: { row: number; col: number };
 }
 
