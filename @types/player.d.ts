@@ -11,7 +11,7 @@ interface PlayersSymbolInterface {
 }
 
 interface Turn {
-    player: undefined | string | null;
+    player: string | null;
     square: { row: number; col: number };
 }
 
