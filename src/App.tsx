@@ -3,13 +3,10 @@ import Container from "./components/Container.tsx";
 import GameBoard from "./components/GameBoard.tsx";
 import Player from "./components/Player.tsx";
 import Log from "./components/Log.tsx";
+import GameOver from "./components/GameOver.tsx";
 
 import {deriveActivePlayer} from "./helpers/deriveActivePlayer.ts";
 import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/constant.ts";
-import GameOver from "./components/GameOver.tsx";
-
-//todo create new branch for v1.1
-//todo check eslint and linter
 
 function App() {
     const [gameTurns, setGameTurns] = useState([]);
