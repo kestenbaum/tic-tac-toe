@@ -13,7 +13,7 @@ function App() {
     const activePlayer = deriveActivePlayer<string>(gameTurns);
     const gameBoard:null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
     let winner;
-    function handleSelectSquare(rowIndex, colIndex) {
+    function handleSelectSquare(rowIndex:number, colIndex:number) {
         setGameTurns(prevTurns => {
             let currentPlayer:string = deriveActivePlayer(prevTurns);
             let updateTurns:Turn[] = [];
@@ -37,9 +37,9 @@ function App() {
     }
 
     for (const combination of WINNING_COMBINATIONS) {
-        const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column];
-        const secondSquareSymbol = gameBoard[combination[1].row][combination[1].column];
-        const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column];
+        const firstSquareSymbol:null = gameBoard[combination[0].row][combination[0].column];
+        const secondSquareSymbol:null = gameBoard[combination[1].row][combination[1].column];
+        const thirdSquareSymbol:null = gameBoard[combination[2].row][combination[2].column];
 
         if (firstSquareSymbol &&
             firstSquareSymbol === secondSquareSymbol &&

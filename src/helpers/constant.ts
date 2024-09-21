@@ -9,7 +9,7 @@ export const INITIAL_PLAYERS:PlayersSymbolInterface = {
     "O": "Player 2"
 }
 
-export const WINNING_COMBINATIONS = [
+export const WINNING_COMBINATIONS:WinningCombinationsInterface[][] = [
     [
         { row: 0, column: 0 },
         { row: 0, column: 1 },
