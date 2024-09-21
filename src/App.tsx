@@ -10,10 +10,10 @@ import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/co
 
 
 const App: FC = () => {
-    const [gameTurns, setGameTurns] = useState([]);
+    const [gameTurns, setGameTurns] = useState<Turn[]>([]);
     const activePlayer = deriveActivePlayer(gameTurns);
     const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
-    let winner;
+    let winner=  "";
 
     function handleSelectSquare(rowIndex: number, colIndex: number) {
         setGameTurns(prevTurns => {

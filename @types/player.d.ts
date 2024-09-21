@@ -11,11 +11,8 @@ interface PlayersSymbolInterface {
 }
 
 interface Turn {
-    square: {
-        row: number ,
-        col: number
-    },
-    player: null | string
+    player: string;
+    square: { row: number; col: number };
 }
 
 interface LogInterface {
