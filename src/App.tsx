@@ -8,6 +8,9 @@ import {deriveActivePlayer} from "./helpers/deriveActivePlayer.ts";
 import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/constant.ts";
 import GameOver from "./components/GameOver.tsx";
 
+//todo create new branch for v1.1
+//todo check eslint and linter
+
 function App() {
     const [gameTurns, setGameTurns] = useState([]);
     const activePlayer = deriveActivePlayer(gameTurns);

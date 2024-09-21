@@ -1,5 +1,7 @@
+import {ReactNode} from "react";
+
 const GameOver = ({winner, onReset}) => {
-    let playerWinner = winner
+    let playerWinner:ReactNode = winner
         ? <p>{winner} won!</p>
         : <p>Has draw!</p>
 

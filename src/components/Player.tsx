@@ -22,7 +22,7 @@ const Player:FC<PlayerInterface> = ({name, symbol, isActive}) => {
                 {playerName}
                 <span className="player-option">Player Symbol: {symbol}</span>
             </div>
-            <button onClick={handleEditClick}>Edit</button>
+            <button onClick={handleEditClick}>{isEdit ? "Save" : "Edit"}</button>
         </li>
     );
 };
