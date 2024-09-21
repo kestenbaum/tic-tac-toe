@@ -15,7 +15,7 @@ interface Turn {
         row: number ,
         col: number
     },
-    player: string | null
+    player: null | string
 }
 
 interface LogInterface {
