@@ -1,6 +1,10 @@
 import {FC, ReactNode} from "react";
 
-const Container:FC<ReactNode> = ({children}: ReactNode) => {
+interface ContainerChild {
+    children: ReactNode
+}
+
+const Container:FC<ContainerChild> = ({children}) => {
     return (
         <div id="game-container">
             {children}

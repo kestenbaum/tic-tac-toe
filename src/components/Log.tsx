@@ -1,4 +1,5 @@
-const Log = ({turns}: Turn[]) => {
+
+const Log = ({turns}) => {
     return (
         <ol id={"log"}>
             {turns.map(turn =>
