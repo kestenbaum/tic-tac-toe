@@ -1,10 +1,10 @@
-export const INITIAL_BOARD = [
+export const INITIAL_BOARD:null[][] = [
     [null, null, null],
     [null, null, null],
     [null, null, null]
 ]
 
-export const INITIAL_PLAYERS:initialPlayers = {
+export const INITIAL_PLAYERS:PlayersSymbolInterface = {
     "X": "Player 1",
     "O": "Player 2"
 }

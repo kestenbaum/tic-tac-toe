@@ -9,17 +9,20 @@ import {deriveActivePlayer} from "./helpers/deriveActivePlayer.ts";
 import {INITIAL_BOARD, INITIAL_PLAYERS, WINNING_COMBINATIONS} from "./helpers/constant.ts";
 
 function App() {
-    const [gameTurns, setGameTurns] = useState([]);
-    const activePlayer = deriveActivePlayer(gameTurns);
-    const gameBoard = [...INITIAL_BOARD.map(arr => [...arr])];
+    const [gameTurns, setGameTurns] = useState<Turn[]>([]);
+    const activePlayer = deriveActivePlayer<string>(gameTurns);
+    const gameBoard:null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
     let winner;
     function handleSelectSquare(rowIndex, colIndex) {
         setGameTurns(prevTurns => {
-            let currentPlayer = deriveActivePlayer(prevTurns);
-            return  [
+            let currentPlayer:string = deriveActivePlayer(prevTurns);
+            let updateTurns:Turn[] = [];
+
+            updateTurns =  [
                 {square: {col: colIndex, row: rowIndex}, player: currentPlayer},
                 ...prevTurns
             ];
+            return updateTurns;
         })
     }
 

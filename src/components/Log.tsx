@@ -1,4 +1,6 @@
-const Log = ({turns}) => {
+import {FC} from "react";
+
+const Log:FC= ({turns}:Turn[]) => {
     return (
         <ol id={"log"}>
             {turns.map(turn =>

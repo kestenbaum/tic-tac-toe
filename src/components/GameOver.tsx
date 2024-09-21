@@ -1,6 +1,6 @@
-import {ReactNode} from "react";
+import {FC, ReactNode} from "react";
 
-const GameOver = ({winner, onReset}) => {
+const GameOver:FC<GameOverInterface> = ({winner, onReset}) => {
     let playerWinner:ReactNode = winner
         ? <p>{winner} won!</p>
         : <p>Has draw!</p>
