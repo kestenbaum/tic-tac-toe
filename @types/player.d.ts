@@ -20,7 +20,7 @@ interface LogInterface {
 }
 
 interface GameOverInterface {
-    winner: string,
+    winner: string | undefined,
     onReset: () => void
 }
 

@@ -14,7 +14,7 @@ const App: FC = () => {
     const activePlayer = deriveActivePlayer(gameTurns);
     const gameBoard: null[][] = [...INITIAL_BOARD.map(arr => [...arr])];
     const hasDraw = gameTurns.length === 9 && !winner;
-    let winner=  "";
+    let winner;
 
     function handleResetBoard() {
         setGameTurns([])
