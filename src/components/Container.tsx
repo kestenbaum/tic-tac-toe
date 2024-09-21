@@ -1,8 +1,4 @@
-import {FC, ReactNode} from "react";
-
-interface ContainerChild {
-    children: ReactNode
-}
+import {FC} from "react";
 
 const Container:FC<ContainerChild> = ({children}) => {
     return (

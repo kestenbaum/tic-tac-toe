@@ -1,5 +1,6 @@
+import {FC} from "react";
 
-const Log = ({turns}) => {
+const Log:FC<LogInterface> = ({turns}) => {
     return (
         <ol id={"log"}>
             {turns.map(turn =>
