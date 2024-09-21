@@ -23,6 +23,7 @@ const App: FC = () => {
     for (const turn of gameTurns) {
         const {square, player} = turn;
         const {row, col} = square;
+        //@ts-ignore
         gameBoard[row][col] = player;
     }
 
